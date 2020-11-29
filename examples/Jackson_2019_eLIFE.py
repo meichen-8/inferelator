@@ -18,7 +18,7 @@ YEASTRACT_PRIOR = "YEASTRACT_20190713_BOTH.tsv"
 TF_NAMES = "tf_names_gold_standard.txt"
 YEASTRACT_TF_NAMES = "tf_names_yeastract.txt"
 
-n_cores_local = 10
+n_cores_local = 4
 local_engine = True
 
 # Multiprocessing uses the pathos implementation of multiprocessing (with dill instead of cPickle)

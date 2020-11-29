@@ -494,15 +494,19 @@ class InferelatorData(object):
         :param trim_gene_list: This is a list of genes to KEEP.
         :type trim_gene_list: list, pd.Series, pd.Index
         """
+        
 
         keep_column_bool = np.ones((len(self._adata.var_names),), dtype=bool)
-
+        
         if trim_gene_list is not None:
             keep_column_bool &= self._adata.var_names.isin(trim_gene_list)
+        
         if "trim_gene_list" in self._adata.uns:
             keep_column_bool &= self._adata.var_names.isin(self._adata.uns["trim_gene_list"])
 
         list_trim = len(self._adata.var_names) - np.sum(keep_column_bool)
+        
+        
         comp = 0 if self._is_integer else np.finfo(self.values.dtype).eps * 10
 
         if remove_constant_genes:

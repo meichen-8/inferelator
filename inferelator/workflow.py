@@ -489,14 +489,14 @@ class WorkflowBaseLoader(object):
 
     def read_genes(self, file=None):
         """
-        Read tf names file into tf_names
+        Read gene names file into gene_names
         """
 
         # Load the class variable if no file is passed
         file = self.gene_names_file if file is None else file
 
         if file is not None:
-            Debug.vprint("Loading TF feature names from file {file}".format(file=file), level=1)
+            Debug.vprint("Loading Genes names from file {file}".format(file=file), level=1)
             # Read in a dataframe with no header or index
             loader = InferelatorDataLoader(input_dir=self.input_dir, file_format_settings=self._file_format_settings)
             genes = loader.input_dataframe(file, header=None, index_col=None)
@@ -848,6 +848,7 @@ class WorkflowBase(WorkflowBaseLoader):
         """
 
         Debug.vprint("Trimming expression matrix", level=1)
+
         self.data.trim_genes(trim_gene_list=self.gene_names)
         self.priors_data = self.prior_manager.filter_priors_to_genes(self.priors_data, self.data.gene_names)
 
