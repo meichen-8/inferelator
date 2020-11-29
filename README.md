@@ -1,3 +1,6 @@
+All my data and codes are in the MyWorkspace folder.
+Original README:
+
 # inferelator 
 
 [![PyPI version](https://badge.fury.io/py/inferelator.svg)](https://badge.fury.io/py/inferelator)
@@ -27,3 +30,4 @@ basic workflows for ***Bacillus subtilis*** and ***Saccharomyces cerevisiae*** a
 
 All current example data and scripts are available from Zenodo 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3355524.svg)](https://doi.org/10.5281/zenodo.3355524)
+
