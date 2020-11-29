@@ -1,6 +1,3 @@
-All my data and codes are in the MyWorkspace folder.   
-Original README:
-
 # inferelator 
 
 [![PyPI version](https://badge.fury.io/py/inferelator.svg)](https://badge.fury.io/py/inferelator)
