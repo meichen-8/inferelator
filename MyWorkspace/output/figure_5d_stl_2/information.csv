@@ -1,0 +1,6 @@
+,value
+tf_names_file,tf_names_yeastract.tsv
+random_seed,"list(range(52, 62))"
+cv_split_axis,0
+cv_split_ratio,0.5
+num_bootstraps,5

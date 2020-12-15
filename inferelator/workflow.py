@@ -659,7 +659,7 @@ class WorkflowBase(WorkflowBaseLoader):
         self.get_environmentals()
 
     def set_crossvalidation_parameters(self, split_gold_standard_for_crossvalidation=None, cv_split_ratio=None,
-                                       cv_split_axis=None):
+                                       cv_split_axis=0):
         """
         Set parameters for crossvalidation.
 

@@ -253,8 +253,21 @@ class ManagePriors(object):
         """
 
         assert check.argument_enum(split_axis, [0, 1])
-
-        new_priors = priors.drop(gold_standard.axes[split_axis], axis=split_axis, errors='ignore')
+        
+        
+        gs_label = list(gold_standard.index)+list(gold_standard.columns)
+        droplist = []
+        for names in list(priors.index):
+            name = names.split(',')
+            flag = 0
+            for t in name:
+                if t in gs_label:
+                    flag = 1
+                    break
+            if flag == 1:
+                droplist.append(names)
+        
+        new_priors = priors.drop(droplist, axis=split_axis, errors='ignore')
 
         return new_priors, gold_standard
 
