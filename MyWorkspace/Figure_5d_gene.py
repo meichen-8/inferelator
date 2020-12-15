@@ -11,7 +11,7 @@ from inferelator import inferelator_workflow, inferelator_verbose_level, MPContr
 import pandas as pd
 
 # Set verbosity level to "Talky"
-inferelator_verbose_level(1)
+#inferelator_verbose_level(1)
 
 # Set the location of the input data and the desired location of the output files
 DATA_DIR = './data/'
