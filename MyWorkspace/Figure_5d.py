@@ -29,7 +29,7 @@ YEASTRACT_PRIOR = "YEASTRACT_20190713_BOTH.tsv"
 
 TF_NAMES = "tf_names_yeastract.tsv"
 
-n_cores_local = 16
+n_cores_local = 8
 local_engine = True
 
 def set_up_workflow(wkf):
@@ -80,6 +80,7 @@ if __name__ == '__main__' and local_engine:
     MPControl.client.processes = n_cores_local
     MPControl.connect()
       
+    '''
     #%% Figure 5D: STL
     wkfname = 'figure_5d_stl_20201214'
         
@@ -96,7 +97,7 @@ if __name__ == '__main__' and local_engine:
     info = pd.DataFrame.from_dict(info, orient='index', columns = ['value'])
 
     info.to_csv(OUTPUT_DIR + wkfname + '/information.csv')
-  
+    '''
     #%%
     # Figure 5D: MTL_bbsr
     wkfname = "figure_5d_mtl_bbsr_20201214"

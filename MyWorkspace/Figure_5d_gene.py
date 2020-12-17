@@ -30,7 +30,7 @@ YEASTRACT_PRIOR = "YEASTRACT_20190713_BOTH.tsv"
 TF_NAMES = "tf_names_yeastract.tsv"
 
 
-n_cores_local = 16
+n_cores_local = 8
 local_engine = True
 
 def set_up_workflow(wkf):
@@ -80,7 +80,8 @@ if __name__ == '__main__' and local_engine:
     MPControl.set_multiprocess_engine("multiprocessing")
     MPControl.client.processes = n_cores_local
     MPControl.connect()
-# %%
+    # %%
+    '''
     # Figure 5D: STL
     wkfname = 'figure_5d_stl_20201214'
     worker = set_up_workflow(inferelator_workflow(regression="bbsr", workflow="single-cell"))
@@ -123,8 +124,8 @@ if __name__ == '__main__' and local_engine:
     info = {'expression_fiie': EXPRESSION_FILE_NAME, 'gold_standard_file': GOLD_STANDARD_FILE_NAME ,'priors': YEASTRACT_PRIOR, 'tf_names_file': TF_NAMES, 'cv_split_axis': 0, 'cv_split_ratio': 0.5, 'num_bootstraps': 5}
     info = pd.DataFrame.from_dict(info, orient='index', columns = ['value'])
     info.to_csv(OUTPUT_DIR + wkfname + '/information.csv')
-    
-#%% Figure 5D: MTL_bbsr
+    '''
+#%% Figure 5D: MTL_amusr
     wkfname = 'figure_5d_mtl_amusr_20201214'
     worker = inferelator_workflow(regression="amusr", workflow="multitask")
     worker.set_file_paths(input_dir = DATA_DIR,
