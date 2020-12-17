@@ -81,7 +81,7 @@ if __name__ == '__main__' and local_engine:
     MPControl.client.processes = n_cores_local
     MPControl.connect()
     # %%
-    '''
+
     # Figure 5D: STL
     wkfname = 'figure_5d_stl_20201214'
     worker = set_up_workflow(inferelator_workflow(regression="bbsr", workflow="single-cell"))
@@ -96,7 +96,7 @@ if __name__ == '__main__' and local_engine:
     info = {'expression_fiie': EXPRESSION_FILE_NAME, 'gold_standard_file': GOLD_STANDARD_FILE_NAME ,'priors': YEASTRACT_PRIOR, 'tf_names_file': TF_NAMES, 'cv_split_axis': 0, 'cv_split_ratio': 0.5, 'num_bootstraps': 5}
     info = pd.DataFrame.from_dict(info, orient='index', columns = ['value'])
 
-    info.to_csv(OUTPUT_DIR + wkfname + '/information.csv')
+    info.to_csv(OUTPUT_DIR + wkfname + '/information.txt')
   
 #%%
     # Figure 5D: MTL_bbsr
@@ -123,8 +123,8 @@ if __name__ == '__main__' and local_engine:
     
     info = {'expression_fiie': EXPRESSION_FILE_NAME, 'gold_standard_file': GOLD_STANDARD_FILE_NAME ,'priors': YEASTRACT_PRIOR, 'tf_names_file': TF_NAMES, 'cv_split_axis': 0, 'cv_split_ratio': 0.5, 'num_bootstraps': 5}
     info = pd.DataFrame.from_dict(info, orient='index', columns = ['value'])
-    info.to_csv(OUTPUT_DIR + wkfname + '/information.csv')
-    '''
+    info.to_csv(OUTPUT_DIR + wkfname + '/information.txt')
+   
 #%% Figure 5D: MTL_amusr
     wkfname = 'figure_5d_mtl_amusr_20201214'
     worker = inferelator_workflow(regression="amusr", workflow="multitask")
@@ -149,4 +149,4 @@ if __name__ == '__main__' and local_engine:
     
     info = {'expression_fiie': EXPRESSION_FILE_NAME, 'gold_standard_file': GOLD_STANDARD_FILE_NAME ,'priors': YEASTRACT_PRIOR, 'tf_names_file': TF_NAMES, 'cv_split_axis': 0, 'cv_split_ratio': 0.5, 'num_bootstraps': 5}
     info = pd.DataFrame.from_dict(info, orient='index', columns = ['value'])
-    info.to_csv(OUTPUT_DIR + wkfname + '/information.csv')
+    info.to_csv(OUTPUT_DIR + wkfname + '/information.txt')
