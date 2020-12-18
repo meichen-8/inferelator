@@ -1,0 +1,8 @@
+,value
+expression_fiie,expression_data/all_tcc.h5ad
+gold_standard_file,gold_standard_tcc.tsv
+priors,YEASTRACT_20190713_BOTH_tcc-t.tsv
+tf_names_file,tf_names_yeastract_tcc.tsv
+cv_split_axis,0
+cv_split_ratio,0.5
+num_bootstraps,5
