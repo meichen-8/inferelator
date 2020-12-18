@@ -11,13 +11,13 @@ from inferelator import inferelator_workflow, inferelator_verbose_level, MPContr
 import pandas as pd
 
 # Set verbosity level to "Talky"
-#inferelator_verbose_level(1)
+inferelator_verbose_level(1)
 
 # Set the location of the input data and the desired location of the output files
 DATA_DIR = './data/'
 OUTPUT_DIR = './output/'
 
-growth_conditions=["DIAUXY", "YPETOH", "MMD", "MMETOH",  "NLIMNH4", "NLIMUREA", "NLIMGLN", "NLIMPRO", "YPD", "RAPA", "CSTARVE"]
+growth_conditions=["DIAUXY", "YPETOH"]#, "MMD", "MMETOH",  "NLIMNH4", "NLIMUREA", "NLIMGLN", "NLIMPRO", "YPD", "RAPA", "CSTARVE"]
 
 
 EXPRESSION_FILE_NAME = 'expression_data/103118_SS_Data.tsv'
@@ -29,7 +29,7 @@ YEASTRACT_PRIOR = "YEASTRACT_20190713_BOTH.tsv"
 
 TF_NAMES = "tf_names_yeastract.tsv"
 
-n_cores_local = 8
+n_cores_local = 16
 local_engine = True
 
 def set_up_workflow(wkf):
@@ -80,6 +80,7 @@ if __name__ == '__main__' and local_engine:
     MPControl.client.processes = n_cores_local
     MPControl.connect()
       
+    '''
     #%% Figure 5D: STL
     wkfname = 'figure_5d_stl_20201214'
         
@@ -123,7 +124,7 @@ if __name__ == '__main__' and local_engine:
     info = pd.DataFrame.from_dict(info, orient='index', columns = ['value'])
     info.to_csv(OUTPUT_DIR + wkfname + '/information.txt')
   
-
+    '''
     #%%
     # Figure 5D: MTL_amusr
     wkfname = "figure_5d_mtl_amusr_20201214"
